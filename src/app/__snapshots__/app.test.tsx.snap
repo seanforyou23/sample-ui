@@ -15,28 +15,50 @@ exports[`App tests should render default App component 1`] = `
       }
     }
   />
-  <div
-    className="app-container"
+  <Component
+    header={<Unknown />}
+    sidebar={<Sidebar />}
   >
-    <div
-      className="notification-container"
-    >
-      <Alert
-        action={
-          <AlertActionCloseButton
-            aria-label=""
-            className=""
-            onClose={[Function]}
-          />
-        }
-        className=""
-        title="Setup Complete"
-        variant="success"
-        variantLabel={null}
-      >
-        You have successfully launched your patternfly starter project.
-      </Alert>
-    </div>
-  </div>
+    <Routes />
+  </Component>
 </Fragment>
+`;
+
+exports[`App tests should render the dashboard route 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "dashboard",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "dashboard",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <App
+    appName="Sample UI"
+  />
+</Router>
 `;

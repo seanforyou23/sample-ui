@@ -1,7 +1,7 @@
 import * as React from 'react';
 import App from '.';
 import { mount, shallow } from 'enzyme';
-import { Alert, Button } from '@patternfly/react-core';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('App tests', () => {
   test('should render default App component', () => {
@@ -9,17 +9,15 @@ describe('App tests', () => {
     expect(view).toMatchSnapshot();
   });
 
-  it('should render a dismiss button', () => {
-    const wrapper = mount(<App appName="Sample UI" />);
-    const button = wrapper.find(Button);
-    expect(button.exists()).toBe(true)
-  });
-
-  it('should hide the alert when clicking the dismiss button', () => {
-    const wrapper = mount(<App appName="Sample UI" />);
-    const button = wrapper.find(Button);
-    expect(wrapper.find(Alert).exists()).toBe(true);
-    button.simulate('click');
-    expect(wrapper.find(Alert).exists()).toBe(false);
+  test('should render the dashboard route', () => {
+    const view = shallow(
+      <MemoryRouter initialEntries={[{
+        pathname: '/',
+        key: 'dashboard'
+      }]}>
+        <App appName="Sample UI" />
+      </MemoryRouter>
+    );
+    expect(view).toMatchSnapshot();
   });
 });

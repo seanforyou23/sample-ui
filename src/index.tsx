@@ -14,5 +14,5 @@ ReactDOM.render(
   <Router>
     <App appName="Sample UI" />
   </Router>,
-  document.getElementById('dc-root') as HTMLElement
+  document.getElementById('sample-root') as HTMLElement
 );

@@ -28,14 +28,10 @@ interface IApp {
 }
 
 export default class App extends Component<IApp> {
-  public state = {
-    isShowing: true
-  };
   constructor(props: any) {
     super(props);
   }
   public render() {
-    const { isShowing } = this.state;
     return (
       <>
         <BackgroundImage src={images} />
